@@ -1,0 +1,53 @@
+server:
+  port: 9290
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: botgo-data-kafka
+  datasource:
+    dynamic:
+      primary: db1
+      hikari:
+        connection-test-query: select 'x'
+        min-idle: 10
+        max-pool-size: 500
+        connection-timeout: 600000
+        idle-timeout: 3000000
+        data-source-properties:
+          serverTimezone: Asia/Shanghai
+          characterEncoding: utf-8
+          useUnicode: true
+          useSSL: false
+          autoReconnect: true
+          cachePrepStmts: true
+          prepStmtCacheSize: 250
+          prepStmtCacheSqlLimit: 2048
+          useServerPrepStmts: true
+          useLocalSessionState: true
+          rewriteBatchedStatements: true
+          cacheResultSetMetadata: true
+          cacheServerConfiguration: true
+          elideSetAutoCommits: true
+          maintainTimeStats: false
+          allowPublicKeyRetrieval: true
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+    log-resolved-exception: true
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: non_null
+logging:
+  register-shutdown-hook: true
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: false
+
+kafka:
+  default-group-id: originaltek
+  default-consumer_id1: originaltek
+

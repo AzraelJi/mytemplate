@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    dynamic:
+      datasource:
+        db1:
+          url: jdbc:p6spy:mysql://192.168.xx.xx:33391/botgodata
+          password: Alldo807
+          username: root
+          type: com.zaxxer.hikari.HikariDataSource
+          driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+#        db2:
+#          url: jdbc:ignite:thin://192.168.xx.xx/
+#          jdbc-url: jdbc:ignite:thin://192.168.xx.xx/
+#          password: xxxxxx
+#          username: root
+#          driver-class-name: org.apache.ignite.IgniteJdbcThinDriver
+#          driver-class: org.apache.ignite.IgniteJdbcThinDriver
+
+kafka:
+  url: kafka04:9092
+  originaltekUrl: xx.xx.xx.xx:6667
